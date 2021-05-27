@@ -3,7 +3,7 @@ name: Update Data
 on:
   push:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '15 * * * *'
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "update data $(date +'%Y-%m-%dT%H:%M:%S')" -a
+          git commit -m "update at $(date +'%Y-%m-%dT%H:%M:%S%z')" -a
 
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
