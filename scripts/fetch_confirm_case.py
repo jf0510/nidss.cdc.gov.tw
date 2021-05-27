@@ -1,6 +1,6 @@
 import json
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 
 import requests
 
@@ -81,7 +81,7 @@ for city in cities:
         total += area_result["value"]
 
 result = {
-    "meta": {"total": total, "last_update_at": datetime.now().isoformat()},
+    "meta": {"total": total, "last_update_at": datetime.now(timezone.utc).isoformat()},
     "data": dict(data),
 }
 
