@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 
 import requests
 
-PATH = "data/data.json"
+PATH = "data/area.json"
 
 COVID19 = "19CoV"
 
